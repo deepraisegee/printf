@@ -21,6 +21,9 @@ int _printf(const char *format, ...)
 			i++;
 			switch (format[i])
 			{
+				case '%':
+					_putchar('%');
+					break;
 				case 'c':
 					handle_char(args);
 					break;
