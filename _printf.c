@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include "main.h"
 
 /**
@@ -10,5 +8,31 @@
   */
 int _printf(const char *format, ...)
 {
-	
+	if (!format)
+		return (-1);
+	va_list(args);
+	int i = 0;
+
+	va_start(args, format);
+	while (format && format[i])
+	{
+		if (format[i] == '%')
+		{
+			i++;
+			switch (format[i])
+			{
+				case 'c':
+					handle_char(args);
+					break;
+				case 's':
+					handle_string(args);
+					break;
+			}
+		}
+		else
+		{
+			_putchar(format[i]);
+		}
+		i++;
+	}
 }
