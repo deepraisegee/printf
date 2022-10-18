@@ -8,10 +8,11 @@
   */
 int _printf(const char *format, ...)
 {
+	va_list args;
+	int i = 0;
+
 	if (!format)
 		return (-1);
-	va_list(args);
-	int i = 0;
 
 	va_start(args, format);
 	while (format && format[i])
@@ -38,4 +39,5 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
+	return (i);
 }
