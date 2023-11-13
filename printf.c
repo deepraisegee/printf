@@ -8,7 +8,7 @@
   *
   * Return: function to the format specifier
   */
-int (*print_fmt(char spec))(char)
+int (*print_fmt(char spec))(va_list)
 {
 	int i;
 	fmt f_specs[] = {
@@ -18,8 +18,8 @@ int (*print_fmt(char spec))(char)
 
 	for (i = 0; f_specs[i].spec; i++)
 	{
-		if (spec == *f_specs[i].spec)
-			return (*f_specs[i].handler);
+		if (spec == f_specs[i].spec[0])
+			return (f_specs[i].handler);
 	}
 
 	return (NULL);
@@ -33,8 +33,8 @@ int (*print_fmt(char spec))(char)
   */
 int _printf(const char *format, ...)
 {
-	int i;
-	int (*func)(char);
+	int i, count = 0;
+	int (*func)(va_list);
 	va_list args;
 
 	va_start(args, format);
@@ -45,15 +45,19 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			func = print_fmt(format[i + 1]);
-			if (func == NULL)
+			if (func != NULL)
+			{
+				count += func(args);
+				i += 2;
 				continue;
-			// func(va_arg(args, int));
+			}
+				
 		}
 		_putchar(format[i]);
 		i++;
 	}
 
 	va_end(args);
-
-	return (i - 1);
+	
+	return (i + count - 2);
 }

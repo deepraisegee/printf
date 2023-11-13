@@ -1,3 +1,4 @@
+#include <stdarg.h>
 #include "main.h"
 
 /**
@@ -6,7 +7,9 @@
   *
   * Return: number of char
   */
-int print_char(char c)
+int print_char(va_list args)
 {
-	return (_putchar(c));
+	char c = va_arg(args, int);
+	_putchar(c);
+	return (1);
 }
