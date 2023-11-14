@@ -7,9 +7,7 @@
   *
   * Return: number of char
   */
-int print_char(va_list args)
+int print_char(va_list c)
 {
-	char c = va_arg(args, int);
-	_putchar(c);
-	return (1);
+	return (_putchar(c));
 }
