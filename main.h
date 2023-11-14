@@ -3,7 +3,12 @@
 
 #include <stdarg.h>
 
-typedef struct
+/**
+  * struct fmt - format type for _prinft
+  * @spec: specifier
+  * @handler: correspond funtion
+  */
+typedef struct fmt
 {
 	char *spec;
 	int (*handler)(va_list);
