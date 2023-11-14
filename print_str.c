@@ -3,14 +3,14 @@
 
 /**
   * print_str - outputs string from formatted string
-  * @s: string to be output
+  * @args: argument list
   *
   * Return: total number of character in the string
   */
-int print_str(va_list s)
+int print_str(va_list args)
 {
 	int count = 0;
-	char *str = va_arg(s, char *);
+	char *str = va_arg(args, char *);
 
 	while (*str)
 	{

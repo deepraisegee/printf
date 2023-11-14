@@ -3,11 +3,11 @@
 
 /**
   * print_percent - print percent sign
-  * @c: argument passed from the _printf
+  * @args: argument list
   *
   * Return: 1
   */
-int print_percent(va_list c)
+int print_percent(va_list args)
 {
 	return (_putchar('%'));
 }

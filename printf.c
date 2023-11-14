@@ -53,13 +53,13 @@ int _printf(const char *format, ...)
 				i += 2;
 				continue;
 			}
-				
+
 		}
 		_putchar(format[i]);
 		i++;
 	}
 
 	va_end(args);
-	
+
 	return (i + count - 2);
 }
