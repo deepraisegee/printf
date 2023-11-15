@@ -4,16 +4,18 @@
 /**
   * print_char - print a character
   * @args: argument list
+  * @c: character to be printed
+  * @va_list: list of variables.
   *
   * Return: number of char
   */
-int print_char(va_list c)
+int print_char(va_list, c)
 {
-<<<<<<< HEAD
-=======
+	< < < < < < < HEAD = = = = = = =
+
 	char c;
 
 	c = va_arg(args, int);
->>>>>>> c90fad4d300e5ba1fe37227aeb599a67e240f59c
-	return (_putchar(c));
+> > > > > > > c90fad4d300e5ba1fe37227aeb599a67e240f59c
+	return (putchar(c));
 }
