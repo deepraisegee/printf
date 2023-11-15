@@ -11,6 +11,7 @@ typedef struct
 
 int _putchar(char c);
 
+int print_decimal(va_list);
 int print_char(va_list);
 int print_percent(va_list);
 int print_str(va_list);
