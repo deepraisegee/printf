@@ -6,7 +6,7 @@ int main(void)
 {
 	int count;
 
-	count = _printf("Hello %s\n", "Beulah");
+	count = _printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
 	printf("Count: %d\n", count);
 	return (0);
 }
