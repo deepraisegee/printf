@@ -16,6 +16,7 @@ typedef struct fmt
 
 int _putchar(char c);
 
+int print_int(va_list);
 int print_char(va_list);
 int print_percent(va_list);
 int print_str(va_list);
