@@ -16,6 +16,8 @@ int (*print_fmt(char spec))(va_list)
 		{"c", print_char},
 		{"%", print_percent},
 		{"s", print_str},
+		{"d", print_digit},
+		{"i", print_digit},
 		{NULL, NULL}
 	};
 

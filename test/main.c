@@ -6,7 +6,7 @@ int main(void)
 {
 	int count;
 
-	count = _printf("%K\n");
+	count = _printf("%d\n", -342);
 	printf("Count: %d\n", count);
 	return (0);
 }
