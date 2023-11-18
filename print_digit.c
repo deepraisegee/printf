@@ -37,8 +37,8 @@ int print_digit(va_list args)
 	if (d < 0)
 	{
 		_putchar('-');
-		return (1 + (print_int(-1 * d)));
+		return (2 + (print_int(-1 * d)));
 	}
 
-	return (print_int(d));
+	return (1 + print_int(d));
 }
