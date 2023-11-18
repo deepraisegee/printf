@@ -36,13 +36,18 @@ int (*print_fmt(char spec))(va_list)
   */
 int _printf(const char *format, ...)
 {
-	int i, count = 0;
+	int i, tracker;
+	int count = 0;
 	int (*func)(va_list);
 	va_list args;
+
+	if (format == NULL)
+		return (-1);
 
 	va_start(args, format);
 
 	i = 0;
+	tracker = 0;
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
@@ -52,6 +57,7 @@ int _printf(const char *format, ...)
 			{
 				count += func(args);
 				i += 2;
+				tracker += 2;
 				continue;
 			}
 
@@ -62,5 +68,5 @@ int _printf(const char *format, ...)
 
 	va_end(args);
 
-	return (i + count - 2);
+	return (count + (i - tracker));
 }
